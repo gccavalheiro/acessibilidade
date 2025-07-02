@@ -186,7 +186,7 @@ export function BoasPraticasSection() {
               </div>
 
               <div className="bg-gray-600 p-4 rounded">
-                <h6 className="text-sm font-semibold text-yellow-400 mb-2">
+                <h6 className="text-sm font-semibold text-yellow-400 mb-2 flex items-center gap-2">
                   <Lightbulb /> Dicas Importantes:
                 </h6>
                 <ul className="text-gray-200 text-sm space-y-1">
