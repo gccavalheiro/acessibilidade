@@ -55,3 +55,7 @@ body {
 .skip-link:focus {
   top: 6px;
 }
+
+button {
+  cursor: pointer;
+}

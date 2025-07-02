@@ -437,7 +437,7 @@ function trapFocus(element) {
                 </h6>
                 <ul className="text-gray-200 text-sm space-y-1">
                   <li>
-                    • <strong>aria-haspopup="dialog":</strong> Indica que o botão abre um diálogo
+                    • <strong>aria-haspopup=&quot;dialog&quot;:</strong> Indica que o botão abre um diálogo
                   </li>
                   <li>
                     • <strong>aria-controls:</strong> Associa o botão ao diálogo que ele controla
@@ -452,10 +452,10 @@ function trapFocus(element) {
                     • <strong>aria-describedby:</strong> Associa o diálogo à sua descrição
                   </li>
                   <li>
-                    • <strong>aria-modal="true":</strong> Indica que é um diálogo modal
+                    • <strong>aria-modal=&quot;true&quot;:</strong> Indica que é um diálogo modal
                   </li>
                   <li>
-                    • <strong>role="dialog":</strong> Define o papel semântico (para divs)
+                    • <strong>role=&quot;dialog&quot;:</strong> Define o papel semântico (para divs)
                   </li>
                   <li>• <strong>Gerenciamento de foco:</strong> Captura e retorna o foco adequadamente</li>
                   <li>• <strong>Suporte a teclado:</strong> Tab, Shift+Tab, Escape</li>

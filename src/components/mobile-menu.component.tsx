@@ -47,18 +47,63 @@ export function MobileMenu() {
   const handleMenuKeyDown = (event: React.KeyboardEvent) => {
     if (!isMenuOpen) return;
 
-    if (event.key === "Tab") {
-      if (event.shiftKey) {
-        if (document.activeElement === firstMenuItemRef.current) {
-          event.preventDefault();
-          lastMenuItemRef.current?.focus();
+    const menuItems = menuRef.current?.querySelectorAll(
+      "a[href]"
+    ) as NodeListOf<HTMLAnchorElement>;
+    if (!menuItems || menuItems.length === 0) return;
+
+    const currentIndex = Array.from(menuItems).findIndex(
+      (item) => item === document.activeElement
+    );
+    const totalItems = menuItems.length;
+
+    switch (event.key) {
+      case "Tab":
+        if (event.shiftKey) {
+          if (document.activeElement === firstMenuItemRef.current) {
+            event.preventDefault();
+            lastMenuItemRef.current?.focus();
+          }
+        } else {
+          if (document.activeElement === lastMenuItemRef.current) {
+            event.preventDefault();
+            firstMenuItemRef.current?.focus();
+          }
         }
-      } else {
-        if (document.activeElement === lastMenuItemRef.current) {
-          event.preventDefault();
-          firstMenuItemRef.current?.focus();
-        }
-      }
+        break;
+
+      case "ArrowDown":
+        event.preventDefault();
+        const nextIndex =
+          currentIndex === -1 || currentIndex === totalItems - 1
+            ? 0
+            : currentIndex + 1;
+        menuItems[nextIndex]?.focus();
+        break;
+
+      case "ArrowUp":
+        event.preventDefault();
+        const prevIndex =
+          currentIndex === -1 || currentIndex === 0
+            ? totalItems - 1
+            : currentIndex - 1;
+        menuItems[prevIndex]?.focus();
+        break;
+
+      case "Home":
+        event.preventDefault();
+        firstMenuItemRef.current?.focus();
+        break;
+
+      case "End":
+        event.preventDefault();
+        lastMenuItemRef.current?.focus();
+        break;
+
+      case "Escape":
+        event.preventDefault();
+        closeMenu();
+        break;
     }
   };
 
@@ -81,9 +126,7 @@ export function MobileMenu() {
         ref={menuButtonRef}
         className="text-gray-300 hover:text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
         aria-label={
-          isMenuOpen
-            ? "Fechar menu de navegação"
-            : "Abrir menu de navegação"
+          isMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"
         }
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
@@ -92,26 +135,29 @@ export function MobileMenu() {
         {isMenuOpen ? <X /> : <Menu />}
       </button>
 
-      {mounted && createPortal(
-        <Drawer
-          menuRef={menuRef}
-          isMenuOpen={isMenuOpen}
-          handleMenuKeyDown={handleMenuKeyDown}
-          handleMenuItemClick={handleMenuItemClick}
-          firstMenuItemRef={firstMenuItemRef}
-          lastMenuItemRef={lastMenuItemRef}
-        />,
-        document.body
-      )}
+      {mounted &&
+        createPortal(
+          <Drawer
+            menuRef={menuRef}
+            isMenuOpen={isMenuOpen}
+            handleMenuKeyDown={handleMenuKeyDown}
+            handleMenuItemClick={handleMenuItemClick}
+            firstMenuItemRef={firstMenuItemRef}
+            lastMenuItemRef={lastMenuItemRef}
+          />,
+          document.body
+        )}
 
-      {mounted && isMenuOpen && createPortal(
-        <div
-          className="fixed inset-0 bg-black/70 bg-opacity-50 z-40 md:hidden"
-          onClick={closeMenu}
-          aria-hidden="true"
-        />,
-        document.body
-      )}
+      {mounted &&
+        isMenuOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 bg-black/70 bg-opacity-50 z-40 md:hidden"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />,
+          document.body
+        )}
     </>
   );
-} 
+}

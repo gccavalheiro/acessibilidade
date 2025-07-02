@@ -24,10 +24,13 @@ export function Drawer(props: DrawerProps) {
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed top-16 border-t border-gray-700 right-0 w-64 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+      className={`fixed top-16 border-t border-gray-700 focus:translate-x-0 right-0 w-64 h-full bg-gray-800 transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
       aria-label="Menu de navegação mobile"
+      aria-hidden={!isMenuOpen}
+      role="menu"
+      tabIndex={isMenuOpen ? 0 : -1}
       onKeyDown={handleMenuKeyDown}
     >
       <nav className="flex flex-col p-4 space-y-2">
@@ -36,6 +39,8 @@ export function Drawer(props: DrawerProps) {
           href="/"
           className="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-3 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:bg-gray-700"
           onClick={handleMenuItemClick}
+          aria-hidden={!isMenuOpen}
+          tabIndex={isMenuOpen ? 0 : -1}
         >
           Início
         </Link>
@@ -43,6 +48,8 @@ export function Drawer(props: DrawerProps) {
           href="#wcag"
           className="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-3 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:bg-gray-700"
           onClick={handleMenuItemClick}
+          aria-hidden={!isMenuOpen}
+          tabIndex={isMenuOpen ? 0 : -1}
         >
           WCAG
         </Link>
@@ -50,6 +57,8 @@ export function Drawer(props: DrawerProps) {
           href="#w3c"
           className="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-3 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:bg-gray-700"
           onClick={handleMenuItemClick}
+          aria-hidden={!isMenuOpen}
+          tabIndex={isMenuOpen ? 0 : -1}
         >
           W3C
         </Link>
@@ -58,6 +67,8 @@ export function Drawer(props: DrawerProps) {
           href="#boas-praticas"
           className="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-3 rounded-md text-base font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:bg-gray-700"
           onClick={handleMenuItemClick}
+          aria-hidden={!isMenuOpen}
+          tabIndex={isMenuOpen ? 0 : -1}
         >
           Boas Práticas
         </Link>

@@ -21,21 +21,21 @@ export function W3CSection() {
         </h3>
         <ul className="space-y-3 mb-6 text-gray-300">
           <li className="flex items-start space-x-3">
-            <span className="text-blue-300 mt-1">•</span>
+            <span className="text-blue-300">•</span>
             <span>Desenvolvimento de padrões web abertos</span>
           </li>
           <li className="flex items-start space-x-3">
-            <span className="text-blue-300 mt-1">•</span>
+            <span className="text-blue-300">•</span>
             <span>Criação de diretrizes de acessibilidade (WCAG)</span>
           </li>
           <li className="flex items-start space-x-3">
-            <span className="text-blue-300 mt-1">•</span>
+            <span className="text-blue-300">•</span>
             <span>
               Promoção da interoperabilidade entre tecnologias
             </span>
           </li>
           <li className="flex items-start space-x-3">
-            <span className="text-blue-300 mt-1">•</span>
+            <span className="text-blue-300">•</span>
             <span>Desenvolvimento de ferramentas de validação</span>
           </li>
         </ul>
