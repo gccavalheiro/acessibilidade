@@ -1,16 +1,16 @@
 import { Header } from "@/components/header.component";
-import { WCAGSection } from "@/components/wcag-section";
-import { W3CSection } from "@/components/w3c-section";
-import { BoasPraticasSection } from "@/components/good-practice-section";
+import { GoodPracticeSection } from "@/components/sections/good-practice-section";
+import { W3CSection } from "@/components/sections/w3c-section";
+import { WCAGSection } from "@/components/sections/wcag-section";
 
-import { Footer } from "@/components/footer.component";
-import { Banner } from "@/components/banner.component";
-import { SidebarSection } from "@/components/sidebar-section";
 import { AuthorCard } from "@/components/author-card.component";
+import { Banner } from "@/components/banner.component";
+import { Footer } from "@/components/footer.component";
+import { SidebarSection } from "@/components/sections/sidebar-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900">
       <a href="#main-content" className="skip-link">
         Pular para o conteúdo principal
       </a>
@@ -19,7 +19,7 @@ export default function Home() {
 
       <Banner />
 
-      <div
+      <main
         id="main-content"
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
       >
@@ -29,7 +29,7 @@ export default function Home() {
 
             <W3CSection />
 
-            <BoasPraticasSection />
+            <GoodPracticeSection />
           </div>
 
           <div className="space-y-8">
@@ -38,9 +38,9 @@ export default function Home() {
             <SidebarSection />
           </div>
         </div>
-      </div>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }
