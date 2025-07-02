@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Acessibilidade Web
 
-## Getting Started
+Um projeto educacional sobre acessibilidade web, desenvolvido com Next.js e focado nas diretrizes WCAG e boas práticas de desenvolvimento inclusivo.
 
-First, run the development server:
+## 🚀 Tecnologias
 
+- **Next.js 15** - Framework React
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização
+- **Lucide React** - Ícones
+- **ESLint** - Linting com regras de acessibilidade
+
+## 📋 Pré-requisitos
+
+- Node.js 18+ 
+- pnpm (recomendado) ou npm
+
+## 🛠️ Instalação
+
+1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/gccavalheiro/acessibilidade.git
+cd acessibilidade
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Execute o servidor de desenvolvimento:
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## Learn More
+## 📚 Conteúdo
 
-To learn more about Next.js, take a look at the following resources:
+O projeto aborda:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **WCAG (Web Content Accessibility Guidelines)** - Diretrizes internacionais de acessibilidade
+- **W3C** - Padrões web e acessibilidade
+- **Boas Práticas** - Dicas para desenvolvimento inclusivo
+- **Recursos Educacionais** - Links e materiais de referência
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Objetivo
 
-## Deploy on Vercel
+Demonstrar e educar sobre a importância da acessibilidade web, fornecendo exemplos práticos e recursos para desenvolvedores criarem experiências digitais mais inclusivas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Scripts Disponíveis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `pnpm dev` - Inicia o servidor de desenvolvimento
+- `pnpm build` - Gera build de produção
+- `pnpm start` - Inicia o servidor de produção
+- `pnpm lint` - Executa o linter com regras de acessibilidade
+
+ 
